@@ -3,6 +3,7 @@ package org.example.pokedexbackend.model;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -17,10 +18,8 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Team> teams = new ArrayList<>();
 
-    public User(Long id, String username, List<Team> teams) {
-        this.id = id;
-        this.username = username;
-        this.teams = teams;
+    public User() {
+
     }
 
     public String getUsername() {

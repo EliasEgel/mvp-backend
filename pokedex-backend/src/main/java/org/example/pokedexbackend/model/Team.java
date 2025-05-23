@@ -1,9 +1,10 @@
 package org.example.pokedexbackend.model;
 
 
-import jakarta.persistence.*
+import jakarta.persistence.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "teams")
@@ -22,11 +23,8 @@ public class Team {
     @OneToMany(mappedBy = "team", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<TeamPokemon> pokemons = new ArrayList<>();
 
-    public Team(Long id, String name, User user, List<TeamPokemon> pokemons) {
-        this.id = id;
-        this.name = name;
-        this.user = user;
-        this.pokemons = pokemons;
+    public Team() {
+
     }
 
     public Long getId() {
