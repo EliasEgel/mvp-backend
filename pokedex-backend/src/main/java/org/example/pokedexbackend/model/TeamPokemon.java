@@ -3,7 +3,7 @@ package org.example.pokedexbackend.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "team_pokemon")
+@Table(name = "team_pokemon", uniqueConstraints = @UniqueConstraint(columnNames = {"team_id", "position"}))
 public class TeamPokemon {
 
 
