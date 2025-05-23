@@ -17,7 +17,7 @@ public class UserMapper {
         this.teamMapper = teamMapper;
     }
 
-    public UserDto toDto(User user) {
+    public UserDto toFullDto(User user) {
         if (user == null) return null;
 
         List<TeamDto> teams = user.getTeams().stream()
